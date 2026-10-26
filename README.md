@@ -14,11 +14,11 @@ An automated quantum circuit optimizer and T-gate reducer designed for the **Goo
 ### 💡 Core Idea
 The main goal of this tool is to optimize complex quantum circuits by treating the sequence of gates as a multi-dimensional text. Instead of using standard string searching, this optimizer converts flat OpenQASM code into a **Directed Acyclic Graph (DAG)** using Qiskit. 
 
-By analyzing the DAG, the tool performs **"Graph Surgery"** by identifying specific \(n\)-gram patterns (such as \([T][T]\) or \([T][T^\dagger]\)) along independent qubit wires, bypassing parallel execution noise.
+By analyzing the DAG, the tool performs **"Graph Surgery"** by identifying specific \(n\)-gram patterns (such as [T][T] or [T][T†]) along independent qubit wires, bypassing parallel execution noise.
 
 ### 🚀 Key Features
 * **Phase Barrier Breaking:** Automatically commutes (pushes) expensive \(T\)-gates forward through `CX` (CNOT) control lines.
-* **\(N\)-Gram Phase-Folding:** Fuses adjacent \(T\)-gates into cheaper \(S\)-gates or completely annihilates \(T\)/\(T^\dagger\) pairs.
+* **\(N\)-Gram Phase-Folding:** Fuses adjacent \(T\)-gates into cheaper \(S\)-gates or completely annihilates [T][T] or [T][T†]) pairs.
 * **Qiskit 1.x Compatible:** Fully updated to support the latest Qiskit 1.0+ internal graph structures (`DAGOpNode`).
 
 ### 🛠️ Installation & Usage
@@ -40,11 +40,11 @@ Run the pipeline python script to see the automated optimization in action:
 ### 💡 Главная идея
 Основная цель этого инструмента — автоматическая оптимизация сложных квантовых схем. Мы относимся к последовательности квантовых вентилей как к многомерному тексту. Вместо поверхностного поиска по строкам, оптимизатор переводит плоский код OpenQASM в **Направленный ациклический граф (DAG)** с помощью Qiskit.
 
-Анализируя граф, инструмент проводит **«хирургию графов»**: выявляет избыточные $$n$$-граммы (такие как цепочки SS[T][T]$$ или $$T][T^\dagger])$$ вдоль изолированных линий кубитов, полностью игнорируя текстовый «шум» параллельно выполняющихся операций.
+Анализируя граф, инструмент проводит **«хирургию графов»**: выявляет избыточные $$n$$-граммы (такие как цепочки  [T][T] or [T][T†]) вдоль изолированных линий кубитов, полностью игнорируя текстовый «шум» параллельно выполняющихся операций.
 
 ### 🚀 Ключевые возможности
 * **Разрушение фазовых барьеров:** Автоматически протаскивает (коммутирует) дорогие $$T$$-гейты вперед через ведущие (Control) линии вентилей `CX` (CNOT).
-* **Схлопывание фаз через N-граммы:** Объединяет два идущих подряд T-гейта в один дешевый S-гейт или полностью аннулирует пары взаимообратных гейтов T/$$T^\dagger$$.
+* **Схлопывание фаз через N-граммы:** Объединяет два идущих подряд T-гейта в один дешевый S-гейт или полностью аннулирует пары взаимообратных гейтов  [T][T] or [T][T†].
 * **Поддержка Qiskit 1.x:** Код полностью адаптирован под новые внутренние структуры графов Qiskit 1.0+ (`DAGOpNode`).
 
 ### 🛠️ Установка и запуск
